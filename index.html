@@ -3,29 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Industry Value Chain - Professional Analysis</title>
-    <meta name="description" content="Comprehensive industry value chain analysis with key players, processes, and market insights">
-    <meta name="keywords" content="value chain, industry value chain, business analysis, supply chain">
+    <title>Industry Value Chain - Value Flow Analysis</title>
+    <meta name="description" content="Comprehensive industry value chain value chain analysis and market insights">
+    <meta name="keywords" content="industry value chain, value chain, industry analysis, market insights">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset and Base Styles */
         :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --secondary-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-            --accent-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-            --success-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            --warning-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --hover-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --text-muted: #64748b;
-            --border-color: #e2e8f0;
-            --bg-light: #f8fafc;
-            --bg-white: #ffffff;
+            --primary: #2563eb;
+            --primary-light: #3b82f6;
+            --secondary: #64748b;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --background: #fefefe;
+            --surface: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-light: #94a3b8;
+            --border-light: #f1f5f9;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
         * {
@@ -34,56 +31,47 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--primary-gradient);
-            min-height: 100vh;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
+            background: var(--background);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Main Container */
-        .main-container {
+        /* Main Layout */
+        .page {
             min-height: 100vh;
-            background: var(--primary-gradient);
+            background: var(--gradient);
             padding: 2rem 1rem;
         }
 
         .container {
-            max-width: 1200px;
+            width: 70%;
+            max-width: 1400px;
             margin: 0 auto;
-            background: var(--bg-white);
+            background: var(--surface);
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: var(--card-shadow);
-            backdrop-filter: blur(20px);
+            box-shadow: 0 32px 64px rgba(0, 0, 0, 0.12);
         }
 
-        /* Header Section */
-        .hero-header {
-            background: var(--secondary-gradient);
-            color: white;
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
+            padding: 4rem 2rem 3rem;
             text-align: center;
-            padding: 4rem 2rem;
+            color: white;
             position: relative;
-            overflow: hidden;
         }
 
-        .hero-header::before {
+        .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)" /></svg>') center/cover;
-            opacity: 0.3;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.03)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.6;
         }
 
         .hero-content {
@@ -91,274 +79,253 @@
             z-index: 1;
         }
 
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             letter-spacing: -0.02em;
         }
 
-        .hero-subtitle {
-            font-size: 1.25rem;
-            opacity: 0.95;
-            font-weight: 400;
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto 2rem;
+            font-weight: 300;
         }
 
-        /* Statistics Section */
-        .stats-section {
-            background: linear-gradient(135deg, var(--bg-light) 0%, #e2e8f0 100%);
-            padding: 3rem 2rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .stats-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 2rem 1rem;
-            background: var(--bg-white);
-            border-radius: 16px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--hover-shadow);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            background: var(--secondary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-weight: 600;
-        }
-
-        /* Value Chain Flow */
-        .value-chain-container {
-            padding: 4rem 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
-            color: var(--text-primary);
-        }
-
-        /* Node Styles */
-        .value-chain-node {
-            margin-bottom: 3rem;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .value-chain-node.animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .node-container {
+        /* View Toggle */
+        .view-toggle {
             display: flex;
-            align-items: flex-start;
-            gap: 2rem;
-        }
-
-        .node-indicator {
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-        }
-
-        .node-number {
-            width: 60px;
-            height: 60px;
-            background: var(--secondary-gradient);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            padding: 4px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             justify-content: center;
-            font-weight: 700;
-            font-size: 1.25rem;
-            box-shadow: 0 8px 16px rgba(79, 70, 229, 0.3);
-            z-index: 2;
+            max-width: 200px;
+            margin: 0 auto;
         }
 
-        .node-card {
-            flex: 1;
-            background: var(--bg-white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .node-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--hover-shadow);
-        }
-
-        .node-header {
-            background: linear-gradient(135deg, var(--bg-light) 0%, #e2e8f0 100%);
-            padding: 2rem;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        .node-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            line-height: 1.2;
-        }
-
-        .chain-level {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--secondary-gradient);
+        .toggle-btn {
+            background: transparent;
+            border: none;
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 50px;
             font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 90px;
         }
 
-        .node-content {
-            padding: 2rem;
+        .toggle-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
         }
 
-        .content-section {
+        .toggle-btn.active {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Value Chain Flow */
+        .value-chain {
+            padding: 3rem 2rem;
+        }
+
+        .stage-container {
+            position: relative;
             margin-bottom: 2rem;
         }
 
-        .content-section:last-child {
-            margin-bottom: 0;
+        .stage-content {
+            background: var(--surface);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
 
-        .section-header {
+        .stage-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .stage-content:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.15);
+            border-color: transparent;
+        }
+
+        .stage-content:hover::before {
+            opacity: 1;
+        }
+
+        .stage-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .stage-indicator {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 1rem;
+            flex: 1;
+        }
+
+        .stage-dot {
+            width: 16px;
+            height: 16px;
+            background: var(--gradient);
+            border-radius: 50%;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .stage-dot::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border: 2px solid transparent;
+            border-radius: 50%;
+            background: linear-gradient(white, white) padding-box,
+                        var(--gradient) border-box;
+        }
+
+        .stage-header h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .stage-type {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .stage-description {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        /* Companies Showcase */
+        .companies-showcase {
+            margin-bottom: 2rem;
+        }
+
+        .companies-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 1rem;
         }
 
-        .section-header h4 {
-            font-size: 1.125rem;
+        .companies-header h4 {
+            font-size: 1rem;
             font-weight: 600;
             color: var(--text-primary);
         }
 
-        .section-icon {
-            width: 20px;
-            height: 20px;
-            stroke-width: 2;
-            color: #4f46e5;
-        }
-
-        .description {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.7;
-            background: var(--bg-light);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 4px solid #4f46e5;
-            margin: 0;
-        }
-
-        /* Company Grid */
-        .company-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .company-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 1.25rem;
-            border-radius: 12px;
+        .company-count {
+            background: var(--border-light);
+            color: var(--text-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
             font-weight: 500;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
         }
 
-        .company-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.2);
-        }
-
-        .company-item.listed {
-            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-            color: #1e40af;
-            border-color: #3b82f6;
-        }
-
-        .company-item.listed:hover {
-            background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%);
-        }
-
-        .company-item.private {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            color: #92400e;
-            border-color: #f59e0b;
-        }
-
-        .company-item.private:hover {
-            background: linear-gradient(135deg, #fde68a 0%, #facc15 100%);
+        .companies-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
         }
 
         .company-badge {
-            font-size: 1.25rem;
+            background: var(--border-light);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
         }
 
-        .other-info {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.7;
-            background: #f1f5f9;
-            padding: 1.5rem;
+        .company-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .company-badge.public {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            border-color: rgba(16, 185, 129, 0.2);
+        }
+
+        .company-badge.private {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+            border-color: rgba(245, 158, 11, 0.2);
+        }
+
+        .more-companies {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
             border-radius: 12px;
-            border-left: 4px solid #7c3aed;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Insights Box */
+        .insights-box {
+            background: rgba(37, 99, 235, 0.05);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+
+        .insights-box h4 {
+            color: var(--primary);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .insights-box h4::before {
+            content: '💡';
+            font-size: 1.2rem;
+        }
+
+        .insights-box p {
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
         /* Flow Connector */
@@ -366,779 +333,1427 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
             position: relative;
         }
 
         .flow-line {
-            width: 3px;
+            width: 2px;
             height: 40px;
-            background: linear-gradient(to bottom, #4f46e5, #7c3aed);
-            margin-bottom: 1rem;
+            background: var(--gradient);
+            position: relative;
         }
 
-        .flow-arrow {
+        .flow-icon {
+            background: var(--surface);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            border-radius: 50%;
             width: 40px;
             height: 40px;
-            background: var(--secondary-gradient);
-            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            animation: pulse 2s infinite;
-            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+            color: var(--primary);
+            position: relative;
+            margin-top: -8px;
         }
 
-        .flow-arrow svg {
-            width: 20px;
-            height: 20px;
-            stroke-width: 3;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.1);
-                opacity: 0.8;
-            }
+        .flow-icon::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: var(--gradient);
+            border-radius: 50%;
+            z-index: -1;
         }
 
         /* Footer */
         .footer {
-            background: #0f172a;
-            color: #94a3b8;
+            background: var(--text-primary);
+            color: var(--text-light);
             text-align: center;
-            padding: 3rem 2rem;
+            padding: 2rem;
         }
 
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .footer h3 {
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer p {
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            font-size: 0.875rem;
-        }
-
-        .footer-links a {
-            color: #64748b;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: #4f46e5;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .hero-title {
-                font-size: 3rem;
+        /* Industry Standard Responsive Design */
+        
+        /* Extra Large Desktop (1440px+) */
+        @media (min-width: 1440px) {
+            .container {
+                width: 65%;
+                max-width: 1600px;
             }
             
-            .node-container {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
+            .hero h1 {
+                font-size: 3.5rem;
             }
             
-            .node-indicator {
-                margin-bottom: 1rem;
+            .companies-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
         }
 
-        @media (max-width: 768px) {
-            .main-container {
+        /* Large Desktop (1200px - 1439px) */
+        @media (max-width: 1439px) and (min-width: 1200px) {
+            .container {
+                width: 70%;
+            }
+        }
+
+        /* Desktop (992px - 1199px) */
+        @media (max-width: 1199px) and (min-width: 992px) {
+            .container {
+                width: 80%;
+            }
+            
+            .horizontal-chain {
+                gap: 0.75rem;
+            }
+            
+            .chain-item {
+                min-width: 120px;
+                padding: 1.25rem 0.75rem;
+            }
+        }
+
+        /* Tablet Landscape (768px - 991px) */
+        @media (max-width: 991px) and (min-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            
+            .hero {
+                padding: 3rem 1.5rem 2.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.75rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .value-chain {
+                padding: 2rem 1.5rem;
+            }
+            
+            .horizontal-chain {
+                padding: 1.5rem;
+                gap: 0.5rem;
+            }
+            
+            .chain-item {
+                min-width: 100px;
                 padding: 1rem 0.5rem;
             }
             
-            .container {
-                border-radius: 16px;
+            .chain-title {
+                font-size: 0.85rem;
             }
             
-            .hero-header {
-                padding: 3rem 1.5rem;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.125rem;
-            }
-            
-            .stats-section {
-                padding: 2rem 1rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .stat-card {
-                padding: 1.5rem 1rem;
-            }
-            
-            .stat-number {
-                font-size: 2.5rem;
-            }
-            
-            .value-chain-container {
-                padding: 2rem 1rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-                margin-bottom: 2rem;
-            }
-            
-            .node-header {
-                padding: 1.5rem;
-            }
-            
-            .node-title {
-                font-size: 1.5rem;
-            }
-            
-            .node-content {
-                padding: 1.5rem;
-            }
-            
-            .company-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
+            .companies-grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
             }
         }
 
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 2rem;
+        /* Tablet Portrait (576px - 767px) */
+        @media (max-width: 767px) and (min-width: 576px) {
+            .container {
+                width: 95%;
+                margin: 1rem auto;
             }
             
-            .node-number {
-                width: 50px;
-                height: 50px;
+            .hero {
+                padding: 2.5rem 1.5rem 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            
+            .hero p {
                 font-size: 1rem;
+                margin: 0 auto 1.5rem;
             }
             
-            .chain-level {
+            .view-toggle {
+                max-width: 180px;
+            }
+            
+            .toggle-btn {
+                padding: 0.6rem 1.25rem;
+                font-size: 0.8rem;
+                min-width: 80px;
+            }
+            
+            .value-chain {
+                padding: 2rem 1.25rem;
+            }
+            
+            .stage-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .detail-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .horizontal-chain {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.5rem 1rem;
+            }
+            
+            .chain-arrow {
+                transform: rotate(90deg);
+                font-size: 1.25rem;
+            }
+            
+            .chain-item {
+                min-width: auto;
+                width: 100%;
+                padding: 1.25rem 1rem;
+            }
+            
+            .companies-list {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .companies-grid {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+            
+            .company-badge,
+            .company-card {
+                text-align: center;
+                padding: 0.75rem 1rem;
+            }
+        }
+
+        /* Mobile Large (414px - 575px) */
+        @media (max-width: 575px) and (min-width: 414px) {
+            .page {
+                padding: 1rem 0.75rem;
+            }
+            
+            .container {
+                width: 100%;
+                margin: 0;
+                border-radius: 16px;
+            }
+            
+            .hero {
+                padding: 2rem 1.25rem 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            
+            .hero p {
+                font-size: 0.95rem;
+            }
+            
+            .view-toggle {
+                max-width: 160px;
+            }
+            
+            .toggle-btn {
                 padding: 0.5rem 1rem;
+                font-size: 0.75rem;
+                min-width: 70px;
+            }
+            
+            .value-chain {
+                padding: 1.5rem 1rem;
+            }
+            
+            .stage-content {
+                padding: 1.5rem;
+            }
+            
+            .stage-header h3 {
+                font-size: 1.25rem;
+            }
+            
+            .detail-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .horizontal-chain {
+                padding: 1rem;
+            }
+            
+            .chain-number {
+                width: 28px;
+                height: 28px;
                 font-size: 0.8rem;
             }
+            
+            .chain-title {
+                font-size: 0.85rem;
+            }
+            
+            .chain-type {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.6rem;
+            }
+        }
+
+        /* Mobile Small (320px - 413px) */
+        @media (max-width: 413px) {
+            .page {
+                padding: 0.5rem;
+            }
+            
+            .container {
+                width: 100%;
+                border-radius: 12px;
+            }
+            
+            .hero {
+                padding: 1.5rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.75rem;
+                line-height: 1.1;
+            }
+            
+            .hero p {
+                font-size: 0.9rem;
+                margin: 0 auto 1rem;
+            }
+            
+            .view-toggle {
+                max-width: 140px;
+                padding: 3px;
+            }
+            
+            .toggle-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.7rem;
+                min-width: 60px;
+            }
+            
+            .value-chain {
+                padding: 1rem 0.75rem;
+            }
+            
+            .stage-content {
+                padding: 1.25rem;
+            }
+            
+            .stage-header h3 {
+                font-size: 1.1rem;
+            }
+            
+            .stage-type {
+                font-size: 0.7rem;
+                padding: 0.4rem 0.8rem;
+            }
+            
+            .detail-header h2 {
+                font-size: 1.3rem;
+            }
+            
+            .detail-type {
+                padding: 0.5rem 1rem;
+                font-size: 0.75rem;
+            }
+            
+            .horizontal-chain {
+                padding: 0.75rem;
+                gap: 0.75rem;
+            }
+            
+            .chain-item {
+                padding: 1rem 0.75rem;
+            }
+            
+            .chain-number {
+                width: 24px;
+                height: 24px;
+                font-size: 0.75rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .chain-title {
+                font-size: 0.8rem;
+                margin-bottom: 0.4rem;
+            }
+            
+            .chain-type {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.5rem;
+            }
+            
+            .company-badge,
+            .company-card {
+                padding: 0.6rem 0.8rem;
+                font-size: 0.8rem;
+            }
+            
+            .footer {
+                padding: 1.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Ultra Wide Screens (1920px+) */
+        @media (min-width: 1920px) {
+            .container {
+                width: 60%;
+                max-width: 1800px;
+            }
+            
+            .hero h1 {
+                font-size: 4rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+            
+            .companies-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        /* Animation on scroll */
+        .stage-container {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .stage-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Horizontal View Styles */
+        .horizontal-chain {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem;
+            background: var(--surface);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            border: 1px solid var(--border-light);
+        }
+
+        .chain-item {
+            background: var(--surface);
+            border: 2px solid var(--border-light);
+            border-radius: 16px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 140px;
+            position: relative;
+        }
+
+        .chain-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.15);
+        }
+
+        .chain-item.active {
+            border-color: var(--primary);
+            background: rgba(37, 99, 235, 0.05);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(37, 99, 235, 0.2);
+        }
+
+        .chain-number {
+            background: var(--gradient);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin: 0 auto 0.75rem;
+        }
+
+        .chain-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            line-height: 1.3;
+        }
+
+        .chain-type {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .chain-arrow {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Stage Details */
+        .stage-details {
+            min-height: 400px;
+            position: relative;
+        }
+
+        .details-placeholder {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .details-placeholder h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .stage-detail {
+            background: var(--surface);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 2rem;
+            animation: fadeInUp 0.4s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            gap: 1rem;
+        }
+
+        .detail-header h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        .detail-type {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .detail-content > div {
+            margin-bottom: 2rem;
+        }
+
+        .detail-description p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .detail-companies h4,
+        .detail-insights h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .companies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .company-card {
+            background: var(--border-light);
+            color: var(--text-secondary);
+            padding: 1rem;
+            border-radius: 12px;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .company-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .company-card.public {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            border-color: rgba(16, 185, 129, 0.2);
+        }
+
+        .company-card.private {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+            border-color: rgba(245, 158, 11, 0.2);
+        }
+
+        .more-count {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            border-radius: 12px;
+            font-weight: 500;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .detail-insights {
+            background: rgba(37, 99, 235, 0.05);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+
+        .detail-insights h4 {
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .detail-insights h4::before {
+            content: '💡';
+            font-size: 1.2rem;
+        }
+
+        .detail-insights p {
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
     </style>
 </head>
 <body>
-    <div class="main-container">
+    <div class="page">
         <div class="container">
-            <!-- Hero Header -->
-            <header class="hero-header">
+            <!-- Hero Section -->
+            <header class="hero">
                 <div class="hero-content">
-                    <h1 class="hero-title">Industry Value Chain</h1>
-                    <p class="hero-subtitle">Comprehensive business process mapping and strategic overview of the industry value chain ecosystem</p>
+                    <h1>Industry Value Chain</h1>
+                    <p>A comprehensive analysis of key processes, market players, and strategic insights across the value chain ecosystem</p>
+                    
+                    <!-- View Toggle -->
+                    <div class="view-toggle">
+                        <button class="toggle-btn active" data-view="vertical">Vertical</button>
+                        <button class="toggle-btn" data-view="horizontal">Horizontal</button>
+                    </div>
                 </div>
             </header>
             
-            <!-- Statistics Section -->
-            <section class="stats-section">
-                <div class="stats-container">
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <span class="stat-number">4</span>
-                            <span class="stat-label">Value Chain Steps</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">22</span>
-                            <span class="stat-label">Total Companies</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">13</span>
-                            <span class="stat-label">Listed Companies</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">4</span>
-                            <span class="stat-label">Process Connections</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
             <!-- Value Chain Flow -->
-            <main class="value-chain-container">
-                <h2 class="section-title">Value Chain Process Flow</h2>
-                <div class="value-chain-flow">
+            <main class="value-chain">
+                <!-- Vertical View (default) -->
+                <div class="vertical-view">
                     
-      <div class="value-chain-node" data-step="1">
-        <div class="node-container">
-          <div class="node-indicator">
-            <div class="node-number">1</div>
+      <div class="stage-container" data-stage="1">
+        <div class="stage-content">
+          <div class="stage-header">
+            <div class="stage-indicator">
+              <div class="stage-dot"></div>
+              <h3>Fiber Production</h3>
+            </div>
+            <div class="stage-type">Raw Material</div>
           </div>
-          <div class="node-card">
-            <div class="node-header">
-              <h2 class="node-title">Semiconductor Manufacturing</h2>
-              <span class="chain-level">Raw Material</span>
-            </div>
-            <div class="node-content">
-              <div class="content-section description-section">
-                <div class="section-header">
-                  <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14,2 14,8 20,8"/>
-                    <line x1="16" y1="13" x2="8" y2="13"/>
-                    <line x1="16" y1="17" x2="8" y2="17"/>
-                    <polyline points="10,9 9,9 8,9"/>
-                  </svg>
-                  <h4>Process Overview</h4>
-                </div>
-                <p class="description">Production of microchips and processors that power electronic devices.</p>
+          
+          <div class="stage-body">
+            <p class="stage-description">Natural fibers (cotton, wool, silk) or synthetic fibers (polyester, nylon) are produced. This is the first step in textile manufacturing.</p>
+            
+            <div class="companies-showcase">
+           <div class="companies-header">
+             <h4>Key Players</h4>
+             <span class="company-count">6 companies</span>
+           </div>
+           <div class="companies-list">
+             
+               <div class="company-badge public">
+                 Vardhman Textiles (India)
+               </div>
+             
+               <div class="company-badge public">
+                 Century Textiles (India)
+               </div>
+             
+               <div class="company-badge public">
+                 Indorama Ventures (Thailand)
+               </div>
+             
+               <div class="company-badge private">
+                 Local cotton ginners
+               </div>
+             
+               <div class="company-badge private">
+                 wool farms
+               </div>
+             
+               <div class="company-badge private">
+                 silk farmers
+               </div>
+             
+             
+           </div>
+         </div>
+            
+            
+              <div class="insights-box">
+                <h4>Market Insights</h4>
+                <p>Strongly dependent on agriculture, weather, and global commodity prices.</p>
               </div>
-              <div class="content-section"><div class="section-header">
-           <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-             <path d="M3 21h18"/>
-             <path d="M5 21V7l8-4v18"/>
-             <path d="M19 21V11l-6-4"/>
-           </svg>
-           <h4>Listed Companies</h4>
-         </div>
-         <div class="company-grid">
-           <div class="company-item listed">
-             <div class="company-badge">📈</div>
-             <span>Taiwan Semiconductor</span>
-           </div><div class="company-item listed">
-             <div class="company-badge">📈</div>
-             <span>Samsung</span>
-           </div><div class="company-item listed">
-             <div class="company-badge">📈</div>
-             <span>Intel</span>
-           </div>
-         </div></div>
-              <div class="content-section"><div class="section-header">
-           <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-             <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-           </svg>
-           <h4>Private Companies</h4>
-         </div>
-         <div class="company-grid">
-           <div class="company-item private">
-             <div class="company-badge">🏢</div>
-             <span>Specialized foundries</span>
-           </div><div class="company-item private">
-             <div class="company-badge">🏢</div>
-             <span>Equipment suppliers</span>
-           </div>
-         </div></div>
-              
-                <div class="content-section other-info-section">
-                  <div class="section-header">
-                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                      <circle cx="12" cy="12" r="10"/>
-                      <path d="M9 12l2 2 4-4"/>
-                    </svg>
-                    <h4>Key Market Insights</h4>
-                  </div>
-                  <div class="other-info">Extremely capital intensive, requires cutting-edge technology and clean rooms</div>
-                </div>
-              
-            </div>
+            
           </div>
         </div>
         
+        
           <div class="flow-connector">
             <div class="flow-line"></div>
-            <div class="flow-arrow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <polyline points="6,9 12,15 18,9"/>
+            <div class="flow-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M7 13l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
           </div>
         
       </div>
     
-      <div class="value-chain-node" data-step="2">
-        <div class="node-container">
-          <div class="node-indicator">
-            <div class="node-number">2</div>
+      <div class="stage-container" data-stage="2">
+        <div class="stage-content">
+          <div class="stage-header">
+            <div class="stage-indicator">
+              <div class="stage-dot"></div>
+              <h3>Yarn Spinning</h3>
+            </div>
+            <div class="stage-type">Manufacturing</div>
           </div>
-          <div class="node-card">
-            <div class="node-header">
-              <h2 class="node-title">Hardware Assembly</h2>
-              <span class="chain-level">Manufacturing</span>
-            </div>
-            <div class="node-content">
-              <div class="content-section description-section">
-                <div class="section-header">
-                  <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14,2 14,8 20,8"/>
-                    <line x1="16" y1="13" x2="8" y2="13"/>
-                    <line x1="16" y1="17" x2="8" y2="17"/>
-                    <polyline points="10,9 9,9 8,9"/>
-                  </svg>
-                  <h4>Process Overview</h4>
-                </div>
-                <p class="description">Assembly of electronic components into finished devices like smartphones, computers, and IoT devices.</p>
+          
+          <div class="stage-body">
+            <p class="stage-description">Fibers are spun into yarn through mechanical or chemical processes.</p>
+            
+            <div class="companies-showcase">
+           <div class="companies-header">
+             <h4>Key Players</h4>
+             <span class="company-count">3 companies</span>
+           </div>
+           <div class="companies-list">
+             
+               <div class="company-badge public">
+                 Arvind Ltd (India)
+               </div>
+             
+               <div class="company-badge public">
+                 Alok Industries (India)
+               </div>
+             
+               <div class="company-badge private">
+                 Regional spinning mills
+               </div>
+             
+             
+           </div>
+         </div>
+            
+            
+              <div class="insights-box">
+                <h4>Market Insights</h4>
+                <p>Technology-driven, scale provides cost efficiency</p>
               </div>
-              <div class="content-section"><div class="section-header">
-           <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-             <path d="M3 21h18"/>
-             <path d="M5 21V7l8-4v18"/>
-             <path d="M19 21V11l-6-4"/>
-           </svg>
-           <h4>Listed Companies</h4>
-         </div>
-         <div class="company-grid">
-           <div class="company-item listed">
-             <div class="company-badge">📈</div>
-             <span>Foxconn</span>
-           </div><div class="company-item listed">
-             <div class="company-badge">📈</div>
-             <span>Wistron</span>
-           </div><div class="company-item listed">
-             <div class="company-badge">📈</div>
-             <span>Dixon Technologies</span>
-           </div>
-         </div></div>
-              <div class="content-section"><div class="section-header">
-           <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-             <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-           </svg>
-           <h4>Private Companies</h4>
-         </div>
-         <div class="company-grid">
-           <div class="company-item private">
-             <div class="company-badge">🏢</div>
-             <span>Contract manufacturers</span>
-           </div><div class="company-item private">
-             <div class="company-badge">🏢</div>
-             <span>ODM suppliers</span>
-           </div>
-         </div></div>
-              
-                <div class="content-section other-info-section">
-                  <div class="section-header">
-                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                      <circle cx="12" cy="12" r="10"/>
-                      <path d="M9 12l2 2 4-4"/>
-                    </svg>
-                    <h4>Key Market Insights</h4>
-                  </div>
-                  <div class="other-info">Focus on efficiency, quality control, and supply chain coordination</div>
-                </div>
-              
-            </div>
+            
           </div>
         </div>
         
+        
           <div class="flow-connector">
             <div class="flow-line"></div>
-            <div class="flow-arrow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <polyline points="6,9 12,15 18,9"/>
+            <div class="flow-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M7 13l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
           </div>
         
       </div>
     
-      <div class="value-chain-node" data-step="3">
-        <div class="node-container">
-          <div class="node-indicator">
-            <div class="node-number">3</div>
+      <div class="stage-container" data-stage="3">
+        <div class="stage-content">
+          <div class="stage-header">
+            <div class="stage-indicator">
+              <div class="stage-dot"></div>
+              <h3>Fabric Production</h3>
+            </div>
+            <div class="stage-type">Manufacturing</div>
           </div>
-          <div class="node-card">
-            <div class="node-header">
-              <h2 class="node-title">Software Development</h2>
-              <span class="chain-level">Technology</span>
-            </div>
-            <div class="node-content">
-              <div class="content-section description-section">
-                <div class="section-header">
-                  <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14,2 14,8 20,8"/>
-                    <line x1="16" y1="13" x2="8" y2="13"/>
-                    <line x1="16" y1="17" x2="8" y2="17"/>
-                    <polyline points="10,9 9,9 8,9"/>
-                  </svg>
-                  <h4>Process Overview</h4>
-                </div>
-                <p class="description">Development of operating systems, applications, and services that run on hardware platforms.</p>
+          
+          <div class="stage-body">
+            <p class="stage-description">Yarn is woven or knitted into fabric using various techniques and machinery.</p>
+            
+            <div class="companies-showcase">
+           <div class="companies-header">
+             <h4>Key Players</h4>
+             <span class="company-count">4 companies</span>
+           </div>
+           <div class="companies-list">
+             
+               <div class="company-badge public">
+                 Welspun India
+               </div>
+             
+               <div class="company-badge public">
+                 Trident Ltd
+               </div>
+             
+               <div class="company-badge private">
+                 Local weaving cooperatives
+               </div>
+             
+               <div class="company-badge private">
+                 Small fabric mills
+               </div>
+             
+             
+           </div>
+         </div>
+            
+            
+              <div class="insights-box">
+                <h4>Market Insights</h4>
+                <p>Requires significant capital investment in machinery and skilled labor</p>
               </div>
-              <div class="content-section"><div class="section-header">
-           <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-             <path d="M3 21h18"/>
-             <path d="M5 21V7l8-4v18"/>
-             <path d="M19 21V11l-6-4"/>
-           </svg>
-           <h4>Listed Companies</h4>
-         </div>
-         <div class="company-grid">
-           <div class="company-item listed">
-             <div class="company-badge">📈</div>
-             <span>Microsoft</span>
-           </div><div class="company-item listed">
-             <div class="company-badge">📈</div>
-             <span>Google</span>
-           </div><div class="company-item listed">
-             <div class="company-badge">📈</div>
-             <span>Infosys</span>
-           </div><div class="company-item listed">
-             <div class="company-badge">📈</div>
-             <span>TCS</span>
-           </div>
-         </div></div>
-              <div class="content-section"><div class="section-header">
-           <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-             <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-           </svg>
-           <h4>Private Companies</h4>
-         </div>
-         <div class="company-grid">
-           <div class="company-item private">
-             <div class="company-badge">🏢</div>
-             <span>Startups</span>
-           </div><div class="company-item private">
-             <div class="company-badge">🏢</div>
-             <span>Independent developers</span>
-           </div><div class="company-item private">
-             <div class="company-badge">🏢</div>
-             <span>Custom software houses</span>
-           </div>
-         </div></div>
-              
-                <div class="content-section other-info-section">
-                  <div class="section-header">
-                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                      <circle cx="12" cy="12" r="10"/>
-                      <path d="M9 12l2 2 4-4"/>
-                    </svg>
-                    <h4>Key Market Insights</h4>
-                  </div>
-                  <div class="other-info">Talent-driven industry, rapid innovation cycles, network effects important</div>
-                </div>
-              
-            </div>
+            
           </div>
         </div>
         
+        
           <div class="flow-connector">
             <div class="flow-line"></div>
-            <div class="flow-arrow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <polyline points="6,9 12,15 18,9"/>
+            <div class="flow-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M7 13l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
           </div>
         
       </div>
     
-      <div class="value-chain-node" data-step="4">
-        <div class="node-container">
-          <div class="node-indicator">
-            <div class="node-number">4</div>
+      <div class="stage-container" data-stage="4">
+        <div class="stage-content">
+          <div class="stage-header">
+            <div class="stage-indicator">
+              <div class="stage-dot"></div>
+              <h3>Garment Manufacturing</h3>
+            </div>
+            <div class="stage-type">Manufacturing</div>
           </div>
-          <div class="node-card">
-            <div class="node-header">
-              <h2 class="node-title">Distribution & Retail</h2>
-              <span class="chain-level">Retail</span>
-            </div>
-            <div class="node-content">
-              <div class="content-section description-section">
-                <div class="section-header">
-                  <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14,2 14,8 20,8"/>
-                    <line x1="16" y1="13" x2="8" y2="13"/>
-                    <line x1="16" y1="17" x2="8" y2="17"/>
-                    <polyline points="10,9 9,9 8,9"/>
-                  </svg>
-                  <h4>Process Overview</h4>
-                </div>
-                <p class="description">Sale of technology products through online platforms, retail stores, and enterprise channels.</p>
+          
+          <div class="stage-body">
+            <p class="stage-description">Fabrics are cut, sewn, and assembled into finished garments and textile products.</p>
+            
+            <div class="companies-showcase">
+           <div class="companies-header">
+             <h4>Key Players</h4>
+             <span class="company-count">4 companies</span>
+           </div>
+           <div class="companies-list">
+             
+               <div class="company-badge public">
+                 Gokaldas Exports
+               </div>
+             
+               <div class="company-badge public">
+                 Shahi Exports
+               </div>
+             
+               <div class="company-badge private">
+                 Local garment manufacturers
+               </div>
+             
+               <div class="company-badge private">
+                 Tailoring units
+               </div>
+             
+             
+           </div>
+         </div>
+            
+            
+              <div class="insights-box">
+                <h4>Market Insights</h4>
+                <p>Labor-intensive process, often outsourced to countries with lower labor costs</p>
               </div>
-              <div class="content-section"><div class="section-header">
-           <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-             <path d="M3 21h18"/>
-             <path d="M5 21V7l8-4v18"/>
-             <path d="M19 21V11l-6-4"/>
-           </svg>
-           <h4>Listed Companies</h4>
-         </div>
-         <div class="company-grid">
-           <div class="company-item listed">
-             <div class="company-badge">📈</div>
-             <span>Amazon</span>
-           </div><div class="company-item listed">
-             <div class="company-badge">📈</div>
-             <span>Flipkart</span>
-           </div><div class="company-item listed">
-             <div class="company-badge">📈</div>
-             <span>Reliance Digital</span>
-           </div>
-         </div></div>
-              <div class="content-section"><div class="section-header">
-           <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-             <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-           </svg>
-           <h4>Private Companies</h4>
-         </div>
-         <div class="company-grid">
-           <div class="company-item private">
-             <div class="company-badge">🏢</div>
-             <span>Local electronics retailers</span>
-           </div><div class="company-item private">
-             <div class="company-badge">🏢</div>
-             <span>System integrators</span>
-           </div>
-         </div></div>
-              
-                <div class="content-section other-info-section">
-                  <div class="section-header">
-                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                      <circle cx="12" cy="12" r="10"/>
-                      <path d="M9 12l2 2 4-4"/>
-                    </svg>
-                    <h4>Key Market Insights</h4>
-                  </div>
-                  <div class="other-info">Omnichannel approach, customer support and warranty services crucial</div>
-                </div>
-              
-            </div>
+            
           </div>
         </div>
         
+        
+          <div class="flow-connector">
+            <div class="flow-line"></div>
+            <div class="flow-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M7 13l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        
       </div>
     
+      <div class="stage-container" data-stage="5">
+        <div class="stage-content">
+          <div class="stage-header">
+            <div class="stage-indicator">
+              <div class="stage-dot"></div>
+              <h3>Retail Distribution</h3>
+            </div>
+            <div class="stage-type">Retail</div>
+          </div>
+          
+          <div class="stage-body">
+            <p class="stage-description">Finished textile products are distributed through various retail channels to end consumers.</p>
+            
+            <div class="companies-showcase">
+           <div class="companies-header">
+             <h4>Key Players</h4>
+             <span class="company-count">6 companies</span>
+           </div>
+           <div class="companies-list">
+             
+               <div class="company-badge public">
+                 Reliance Retail
+               </div>
+             
+               <div class="company-badge public">
+                 Future Group
+               </div>
+             
+               <div class="company-badge public">
+                 V-Mart
+               </div>
+             
+               <div class="company-badge private">
+                 Local retailers
+               </div>
+             
+               <div class="company-badge private">
+                 Online marketplaces
+               </div>
+             
+               <div class="company-badge private">
+                 Boutique stores
+               </div>
+             
+             
+           </div>
+         </div>
+            
+            
+              <div class="insights-box">
+                <h4>Market Insights</h4>
+                <p>Brand building and customer relationships are crucial at this stage</p>
+              </div>
+            
+          </div>
+        </div>
+        
+        
+      </div>
+    
+                </div>
+                
+                <!-- Horizontal View -->
+                <div class="horizontal-view" style="display: none;">
+                    <!-- Horizontal Chain -->
+                    <div class="horizontal-chain">
+                        
+                            <div class="chain-item" data-stage="0" onclick="showStageDetails(0)">
+                                <div class="chain-number">1</div>
+                                <div class="chain-title">Fiber Production</div>
+                                <div class="chain-type">Raw Material</div>
+                            </div>
+                            <div class="chain-arrow">→</div>
+                        
+                            <div class="chain-item" data-stage="1" onclick="showStageDetails(1)">
+                                <div class="chain-number">2</div>
+                                <div class="chain-title">Yarn Spinning</div>
+                                <div class="chain-type">Manufacturing</div>
+                            </div>
+                            <div class="chain-arrow">→</div>
+                        
+                            <div class="chain-item" data-stage="2" onclick="showStageDetails(2)">
+                                <div class="chain-number">3</div>
+                                <div class="chain-title">Fabric Production</div>
+                                <div class="chain-type">Manufacturing</div>
+                            </div>
+                            <div class="chain-arrow">→</div>
+                        
+                            <div class="chain-item" data-stage="3" onclick="showStageDetails(3)">
+                                <div class="chain-number">4</div>
+                                <div class="chain-title">Garment Manufacturing</div>
+                                <div class="chain-type">Manufacturing</div>
+                            </div>
+                            <div class="chain-arrow">→</div>
+                        
+                            <div class="chain-item" data-stage="4" onclick="showStageDetails(4)">
+                                <div class="chain-number">5</div>
+                                <div class="chain-title">Retail Distribution</div>
+                                <div class="chain-type">Retail</div>
+                            </div>
+                            
+                        
+                    </div>
+                    
+                    <!-- Stage Details -->
+                    <div class="stage-details">
+                        <div class="details-placeholder">
+                            <h3>Select a stage above to view details</h3>
+                            <p>Click on any stage in the value chain to see detailed information, key players, and market insights.</p>
+                        </div>
+                        
+                            <div class="stage-detail" data-stage="0" style="display: none;">
+                                <div class="detail-header">
+                                    <h2>Fiber Production</h2>
+                                    <span class="detail-type">Raw Material</span>
+                                </div>
+                                
+                                <div class="detail-content">
+                                    <div class="detail-description">
+                                        <p>Natural fibers (cotton, wool, silk) or synthetic fibers (polyester, nylon) are produced. This is the first step in textile manufacturing.</p>
+                                    </div>
+                                    
+                                    
+                                        <div class="detail-companies">
+                                            <h4>Key Players (6 total)</h4>
+                                            <div class="companies-grid">
+                                                
+                                                    <div class="company-card public">
+                                                        Vardhman Textiles (India)
+                                                    </div>
+                                                
+                                                    <div class="company-card public">
+                                                        Century Textiles (India)
+                                                    </div>
+                                                
+                                                    <div class="company-card public">
+                                                        Indorama Ventures (Thailand)
+                                                    </div>
+                                                
+                                                    <div class="company-card private">
+                                                        Local cotton ginners
+                                                    </div>
+                                                
+                                                    <div class="company-card private">
+                                                        wool farms
+                                                    </div>
+                                                
+                                                    <div class="company-card private">
+                                                        silk farmers
+                                                    </div>
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                    
+                                    
+                                    
+                                        <div class="detail-insights">
+                                            <h4>Market Insights</h4>
+                                            <p>Strongly dependent on agriculture, weather, and global commodity prices.</p>
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="stage-detail" data-stage="1" style="display: none;">
+                                <div class="detail-header">
+                                    <h2>Yarn Spinning</h2>
+                                    <span class="detail-type">Manufacturing</span>
+                                </div>
+                                
+                                <div class="detail-content">
+                                    <div class="detail-description">
+                                        <p>Fibers are spun into yarn through mechanical or chemical processes.</p>
+                                    </div>
+                                    
+                                    
+                                        <div class="detail-companies">
+                                            <h4>Key Players (3 total)</h4>
+                                            <div class="companies-grid">
+                                                
+                                                    <div class="company-card public">
+                                                        Arvind Ltd (India)
+                                                    </div>
+                                                
+                                                    <div class="company-card public">
+                                                        Alok Industries (India)
+                                                    </div>
+                                                
+                                                    <div class="company-card private">
+                                                        Regional spinning mills
+                                                    </div>
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                    
+                                    
+                                    
+                                        <div class="detail-insights">
+                                            <h4>Market Insights</h4>
+                                            <p>Technology-driven, scale provides cost efficiency</p>
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="stage-detail" data-stage="2" style="display: none;">
+                                <div class="detail-header">
+                                    <h2>Fabric Production</h2>
+                                    <span class="detail-type">Manufacturing</span>
+                                </div>
+                                
+                                <div class="detail-content">
+                                    <div class="detail-description">
+                                        <p>Yarn is woven or knitted into fabric using various techniques and machinery.</p>
+                                    </div>
+                                    
+                                    
+                                        <div class="detail-companies">
+                                            <h4>Key Players (4 total)</h4>
+                                            <div class="companies-grid">
+                                                
+                                                    <div class="company-card public">
+                                                        Welspun India
+                                                    </div>
+                                                
+                                                    <div class="company-card public">
+                                                        Trident Ltd
+                                                    </div>
+                                                
+                                                    <div class="company-card private">
+                                                        Local weaving cooperatives
+                                                    </div>
+                                                
+                                                    <div class="company-card private">
+                                                        Small fabric mills
+                                                    </div>
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                    
+                                    
+                                    
+                                        <div class="detail-insights">
+                                            <h4>Market Insights</h4>
+                                            <p>Requires significant capital investment in machinery and skilled labor</p>
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="stage-detail" data-stage="3" style="display: none;">
+                                <div class="detail-header">
+                                    <h2>Garment Manufacturing</h2>
+                                    <span class="detail-type">Manufacturing</span>
+                                </div>
+                                
+                                <div class="detail-content">
+                                    <div class="detail-description">
+                                        <p>Fabrics are cut, sewn, and assembled into finished garments and textile products.</p>
+                                    </div>
+                                    
+                                    
+                                        <div class="detail-companies">
+                                            <h4>Key Players (4 total)</h4>
+                                            <div class="companies-grid">
+                                                
+                                                    <div class="company-card public">
+                                                        Gokaldas Exports
+                                                    </div>
+                                                
+                                                    <div class="company-card public">
+                                                        Shahi Exports
+                                                    </div>
+                                                
+                                                    <div class="company-card private">
+                                                        Local garment manufacturers
+                                                    </div>
+                                                
+                                                    <div class="company-card private">
+                                                        Tailoring units
+                                                    </div>
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                    
+                                    
+                                    
+                                        <div class="detail-insights">
+                                            <h4>Market Insights</h4>
+                                            <p>Labor-intensive process, often outsourced to countries with lower labor costs</p>
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="stage-detail" data-stage="4" style="display: none;">
+                                <div class="detail-header">
+                                    <h2>Retail Distribution</h2>
+                                    <span class="detail-type">Retail</span>
+                                </div>
+                                
+                                <div class="detail-content">
+                                    <div class="detail-description">
+                                        <p>Finished textile products are distributed through various retail channels to end consumers.</p>
+                                    </div>
+                                    
+                                    
+                                        <div class="detail-companies">
+                                            <h4>Key Players (6 total)</h4>
+                                            <div class="companies-grid">
+                                                
+                                                    <div class="company-card public">
+                                                        Reliance Retail
+                                                    </div>
+                                                
+                                                    <div class="company-card public">
+                                                        Future Group
+                                                    </div>
+                                                
+                                                    <div class="company-card public">
+                                                        V-Mart
+                                                    </div>
+                                                
+                                                    <div class="company-card private">
+                                                        Local retailers
+                                                    </div>
+                                                
+                                                    <div class="company-card private">
+                                                        Online marketplaces
+                                                    </div>
+                                                
+                                                    <div class="company-card private">
+                                                        Boutique stores
+                                                    </div>
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                    
+                                    
+                                    
+                                        <div class="detail-insights">
+                                            <h4>Market Insights</h4>
+                                            <p>Brand building and customer relationships are crucial at this stage</p>
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                            
+                    </div>
                 </div>
             </main>
             
             <!-- Footer -->
             <footer class="footer">
-                <div class="footer-content">
-                    <h3>Professional Analysis Report</h3>
-                    <p><strong>Generated on:</strong> Thursday, August 28, 2025</p>
-                    <p>Powered by Value Chain Creator - Professional Business Intelligence Platform</p>
-                    <div class="footer-links">
-                        <span>© 2025 Value Chain Analysis</span>
-                        <span>•</span>
-                        <span>Professional Grade Business Intelligence</span>
-                    </div>
-                </div>
+                <p>Generated on Thursday, August 28, 2025</p>
             </footer>
         </div>
     </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Global variable for current view
+        let currentView = 'vertical';
+        
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS (Animate On Scroll)
-            AOS.init({
-                duration: 800,
-                once: true,
-                offset: 100,
-                easing: 'ease-out-cubic'
+            initializeView();
+            initializeAnimations();
+            initializeInteractions();
+        });
+
+        function initializeView() {
+            // View toggle functionality
+            const toggleBtns = document.querySelectorAll('.toggle-btn');
+            toggleBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const newView = this.dataset.view;
+                    if (newView !== currentView) {
+                        switchView(newView);
+                        updateToggleButtons(newView);
+                        currentView = newView;
+                    }
+                });
+            });
+        }
+
+        function switchView(view) {
+            const verticalView = document.querySelector('.vertical-view');
+            const horizontalView = document.querySelector('.horizontal-view');
+            
+            if (view === 'horizontal') {
+                verticalView.style.display = 'none';
+                horizontalView.style.display = 'block';
+            } else {
+                verticalView.style.display = 'block';
+                horizontalView.style.display = 'none';
+                // Reset any active stage details
+                hideAllStageDetails();
+            }
+        }
+
+        function updateToggleButtons(activeView) {
+            document.querySelectorAll('.toggle-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.view === activeView);
+            });
+        }
+
+        function showStageDetails(stageIndex) {
+            // Hide placeholder and all other stage details
+            document.querySelector('.details-placeholder').style.display = 'none';
+            document.querySelectorAll('.stage-detail').forEach(detail => {
+                detail.style.display = 'none';
+            });
+            
+            // Show selected stage detail
+            const selectedDetail = document.querySelector('.stage-detail[data-stage="' + stageIndex + '"]');
+            if (selectedDetail) {
+                selectedDetail.style.display = 'block';
+            }
+            
+            // Update chain item active states
+            document.querySelectorAll('.chain-item').forEach(item => {
+                item.classList.toggle('active', item.dataset.stage == stageIndex);
+            });
+            
+            // Smooth scroll to stage details
+            document.querySelector('.stage-details').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+
+        function hideAllStageDetails() {
+            document.querySelector('.details-placeholder').style.display = 'block';
+            document.querySelectorAll('.stage-detail').forEach(detail => {
+                detail.style.display = 'none';
+            });
+            document.querySelectorAll('.chain-item').forEach(item => {
+                item.classList.remove('active');
+            });
+        }
+
+        function initializeAnimations() {
+            // Smooth reveal animation for stages in vertical view
+            const stages = document.querySelectorAll('.stage-container');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
             });
 
-            // Custom scroll animations for value chain nodes
-            const animateNodes = () => {
-                const nodes = document.querySelectorAll('.value-chain-node');
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach((entry, index) => {
-                        if (entry.isIntersecting) {
-                            setTimeout(() => {
-                                entry.target.classList.add('animate');
-                            }, index * 150);
-                        }
-                    });
-                }, {
-                    threshold: 0.2,
-                    rootMargin: '0px 0px -100px 0px'
-                });
+            stages.forEach((stage, index) => {
+                stage.style.transitionDelay = (index * 0.15) + 's';
+                observer.observe(stage);
+            });
+        }
 
-                nodes.forEach(node => {
-                    observer.observe(node);
+        function initializeInteractions() {
+            // Enhanced hover effects for company badges
+            const companyBadges = document.querySelectorAll('.company-badge, .company-card');
+            companyBadges.forEach(badge => {
+                badge.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.02)';
                 });
-            };
-
-            // Smooth scroll navigation
-            const addSmoothScrolling = () => {
-                document.querySelectorAll('.stat-card, .node-card').forEach(element => {
-                    element.addEventListener('click', function(e) {
-                        e.stopPropagation();
-                        this.scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'center',
-                            inline: 'nearest'
-                        });
-                    });
+                
+                badge.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
                 });
-            };
-
-            // Enhanced hover effects
-            const addHoverEffects = () => {
-                document.querySelectorAll('.company-item').forEach(item => {
-                    item.addEventListener('mouseenter', function() {
-                        this.style.transform = 'translateY(-4px) scale(1.02)';
-                        this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-                    });
-                    
-                    item.addEventListener('mouseleave', function() {
-                        this.style.transform = 'translateY(0) scale(1)';
-                    });
-                });
-
-                // Add pulse effect to flow arrows
-                document.querySelectorAll('.flow-arrow').forEach(arrow => {
-                    arrow.addEventListener('mouseenter', function() {
-                        this.style.animation = 'pulse 0.6s ease-in-out infinite';
-                    });
-                    
-                    arrow.addEventListener('mouseleave', function() {
-                        this.style.animation = 'pulse 2s infinite';
-                    });
-                });
-            };
-
-            // Statistics counter animation
-            const animateCounters = () => {
-                const counters = document.querySelectorAll('.stat-number');
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const counter = entry.target;
-                            const target = parseInt(counter.textContent);
-                            let current = 0;
-                            const increment = target / 50;
-                            
-                            const updateCounter = () => {
-                                if (current < target) {
-                                    current += increment;
-                                    counter.textContent = Math.floor(current);
-                                    requestAnimationFrame(updateCounter);
-                                } else {
-                                    counter.textContent = target;
-                                }
-                            };
-                            
-                            updateCounter();
-                            observer.unobserve(counter);
-                        }
-                    });
-                });
-
-                counters.forEach(counter => observer.observe(counter));
-            };
+            });
 
             // Keyboard shortcuts
-            const addKeyboardShortcuts = () => {
-                document.addEventListener('keydown', function(e) {
-                    // Print functionality
-                    if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
-                        e.preventDefault();
-                        window.print();
-                    }
-                    
-                    // Navigation shortcuts
-                    if (e.key === 'Home') {
-                        e.preventDefault();
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }
-                    
-                    if (e.key === 'End') {
-                        e.preventDefault();
-                        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-                    }
-                });
-            };
-
-            // Progress indicator
-            const addProgressIndicator = () => {
-                const progressBar = document.createElement('div');
-                progressBar.style.cssText = `
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 0%;
-                    height: 3px;
-                    background: linear-gradient(90deg, #4f46e5, #7c3aed);
-                    z-index: 9999;
-                    transition: width 0.3s ease;
-                `;
-                document.body.appendChild(progressBar);
-
-                window.addEventListener('scroll', () => {
-                    const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-                    progressBar.style.width = scrolled + '%';
-                });
-            };
-
-            // Accessibility enhancements
-            const enhanceAccessibility = () => {
-                // Add ARIA labels
-                document.querySelectorAll('.node-card').forEach((card, index) => {
-                    card.setAttribute('role', 'article');
-                    card.setAttribute('aria-label', `Value chain step ${index + 1}`);
-                });
-
-                // Add focus indicators
-                document.querySelectorAll('.company-item, .stat-card').forEach(item => {
-                    item.setAttribute('tabindex', '0');
-                    item.addEventListener('focus', function() {
-                        this.style.outline = '2px solid #4f46e5';
-                        this.style.outlineOffset = '2px';
-                    });
-                    item.addEventListener('blur', function() {
-                        this.style.outline = 'none';
-                    });
-                });
-            };
-
-            // Initialize all features
-            animateNodes();
-            addSmoothScrolling();
-            addHoverEffects();
-            animateCounters();
-            addKeyboardShortcuts();
-            addProgressIndicator();
-            enhanceAccessibility();
-
-            // Performance optimization: Debounced scroll handler
-            let scrollTimeout;
-            window.addEventListener('scroll', () => {
-                if (scrollTimeout) clearTimeout(scrollTimeout);
-                scrollTimeout = setTimeout(() => {
-                    // Additional scroll-based animations can be added here
-                }, 100);
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Home') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+                
+                if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                    e.preventDefault();
+                    window.print();
+                }
+                
+                // Toggle view with 'v' key
+                if (e.key === 'v' || e.key === 'V') {
+                    const newView = currentView === 'vertical' ? 'horizontal' : 'vertical';
+                    switchView(newView);
+                    updateToggleButtons(newView);
+                    currentView = newView;
+                }
             });
 
-            console.log('%c🚀 Value Chain Analysis Loaded Successfully!', 'color: #4f46e5; font-size: 16px; font-weight: bold;');
-        });
+            // Subtle parallax effect for hero
+            const hero = document.querySelector('.hero');
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                if (hero && scrolled < hero.offsetHeight) {
+                    hero.style.transform = 'translateY(' + (scrolled * 0.5) + 'px)';
+                }
+            });
+
+            console.log('🚀 Value Chain Analysis with Toggle Views Loaded');
+        }
+
+        // Make showStageDetails global for onclick handlers
+        window.showStageDetails = showStageDetails;
     </script>
 </body>
 </html>
